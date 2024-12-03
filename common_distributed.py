@@ -47,7 +47,7 @@ class MultiProcess():
     # Constructor patches current instance test method to
     # assume the role of the main process and join its subprocesses,
     # or run the underlying test function.
-    def __init__(self, method_name: str = "") -> None:
+    def __init__(self) -> None:
         # pass
         self.skip_return_code_checks = []  # type: ignore[var-annotated]
         self.processes = []  # type: ignore[var-annotated]
@@ -84,7 +84,7 @@ class MultiProcess():
 
     @classmethod
     def _run(cls, rank: int, method_name: str, file_name: str, parent_pipe, **kwargs) -> None:
-        self = cls(method_name)
+        self = cls()
         self.rank = rank
         self.file_name = file_name
         self.run(method_name, parent_pipe)
