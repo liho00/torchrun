@@ -3,6 +3,7 @@ import time
 import torch
 from common_dtensor import DTensor
 import torch.distributed as dist
+from diffusers import FluxPipeline
 
 class DiffusionPipelineTest(DTensor):
     @property
@@ -65,7 +66,6 @@ class DiffusionPipelineTest(DTensor):
 
 class FluxPipelineTest(DiffusionPipelineTest):
     def new_pipe(self):
-        from diffusers import FluxPipeline
         pipe = FluxPipeline.from_pretrained(
             "black-forest-labs/FLUX.1-schnell",
             torch_dtype=torch.bfloat16,
