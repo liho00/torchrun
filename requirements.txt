@@ -1,0 +1,8 @@
+accelerate==1.1.1
+diffusers==0.31.0
+para-attn==0.3.3
+torch==2.5.1
+torchao==0.5.0
+torchaudio==2.5.1
+torchvision==0.20.1
+transformers==4.46.3

@@ -90,7 +90,6 @@ class FluxPipelineTest(DiffusionPipelineTest):
 
         self.init_pg()
         try:
-            pass
             super()._benchmark_pipe(torch.bfloat16, "cuda", True, False, False, True)
         except Exception as e:
             dist.destroy_process_group()
@@ -101,4 +100,4 @@ class FluxPipelineTest(DiffusionPipelineTest):
 
 if __name__ == "__main__":
     flux = FluxPipelineTest()
-    # flux._start_processes("benchmark_pipe")
+    flux._start_processes("benchmark_pipe")
